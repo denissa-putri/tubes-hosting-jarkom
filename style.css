@@ -1,0 +1,355 @@
+/* --- RESET DASAR --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #eef4ed; /* Default teks jadi Mint Cream (terang) */
+    line-height: 1.6;
+
+    /* GRADASI NYATA DARI 5 WARNA */
+    /* Kita urutkan dari Gelap (Atas) ke Terang (Bawah) biar ngga silau di mata */
+    background: linear-gradient(
+        180deg,
+        #0b2545 0%,      /* Prussian Blue (Paling Gelap - Header) */
+        #13315c 25%,     /* Oxford Navy */
+        #134074 50%,     /* Regal Navy (Tengah) */
+        #53759e 75%,     /* Transisi (Campuran) */
+        #8da9c4 100%     /* Powder Blue (Paling Bawah - Footer) */
+    );
+    min-height: 100vh;
+    background-attachment: fixed; /* Biar gradasinya diem pas discroll (keren!) */
+}
+
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* --- HEADER / NAVBAR --- */
+.main-header {
+    background-color: rgba(11, 37, 69, 0.85); /* Prussian Blue Transparan */
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    padding: 15px 0;
+    backdrop-filter: blur(10px); /* Efek kaca buram */
+    border-bottom: 1px solid rgba(141, 169, 196, 0.2); /* Garis tipis Powder Blue */
+}
+
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    font-weight: 700; 
+    font-size: 1.2rem; 
+    color: #eef4ed; /* Mint Cream */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+}
+
+nav a { 
+    text-decoration: none; 
+    color: #8da9c4; /* Powder Blue (Agak redup) */
+    font-weight: 500; 
+    transition: 0.3s;
+}
+
+nav a:hover { 
+    color: #eef4ed; /* Pas di-hover jadi terang (Mint Cream) */
+}
+
+/* Tombol Download di Navbar */
+.btn-nav { 
+    background-color: #eef4ed; /* Mint Cream */
+    color: #134074 !important; /* Teks Regal Navy */
+    padding: 8px 20px; 
+    border-radius: 20px; 
+    font-weight: 700;
+}
+
+.btn-nav:hover {
+    background-color: #a7caec; /* Jadi Powder Blue pas hover */
+    color: #0b2545 !important;
+}
+
+/* --- BAGIAN PROFIL (HERO) --- */
+.hero-section { 
+    padding: 80px 0; 
+}
+
+.hero-content { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px; 
+}
+
+.subtitle { 
+    color: #8da9c4; /* Powder Blue */
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 0.9rem; 
+    letter-spacing: 2px;
+}
+
+.text-area h1 { 
+    font-size: 2.8rem; 
+    margin: 10px 0; 
+    color: #eef4ed; /* Mint Cream */
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Biar teks makin nonjol */
+}
+
+.desc { 
+    margin-top: 25px; 
+    color: #dbe4eb; /* Putih agak abu dikit */
+    max-width: 500px; 
+    font-weight: 300;
+}
+
+.profile-pic { 
+    width: 280px; 
+    height: 280px; 
+    object-fit: cover; 
+    border-radius: 20px; 
+    border: 4px solid #8da9c4; /* Border Powder Blue */
+    box-shadow: 20px 20px 0 rgba(19, 64, 116, 0.4); /* Shadow Regal Navy */
+}
+
+/* KOTAK NIM & KELAS */
+.student-info-grid { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 25px; 
+}
+
+.info-card {
+    background: rgba(96, 185, 44, 0.1); /* Mint Cream Transparan (Glassmorphism) */
+    padding: 10px 20px; 
+    border-radius: 12px; 
+    min-width: 140px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-left: 5px solid #a7cff4; /* Aksen kiri Powder Blue */
+    backdrop-filter: blur(5px);
+}
+
+.info-label { 
+    display: block; 
+    font-size: 0.75rem; 
+    color: #8da9c4; /* Powder Blue */
+    font-weight: 600; 
+    text-transform: uppercase;
+}
+
+.info-value { 
+    display: block; 
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    color: #eef4ed; /* Mint Cream */
+}
+
+/* --- BAGIAN MATERI --- */
+.content-section { 
+    padding: 60px 0; 
+}
+
+.section-title { 
+    text-align: center; 
+    margin-bottom: 40px; 
+}
+
+.section-title h2 {
+    color: #eef4ed;
+    font-size: 2rem;
+}
+
+.underline { 
+    width: 80px; 
+    height: 4px; 
+    background: #8da9c4; /* Powder Blue */
+    margin: 10px auto; 
+    border-radius: 2px; 
+}
+
+.scroll-hint { 
+    font-size: 0.8rem; 
+    color: #aecffd;
+    margin-top: 10px; 
+    font-style: italic; 
+    opacity: 0.8;
+}
+
+/* Wrapper Scroll */
+.scrolling-wrapper {
+    display: flex; 
+    gap: 25px;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    padding: 20px 5px; 
+    scrollbar-width: none; 
+}
+.scrolling-wrapper::-webkit-scrollbar { display: none; }
+
+
+.card-materi {
+    flex: 0 0 100%; 
+    scroll-snap-align: center; 
+    
+    background: #eef4ed; /* Mint Cream (Warna Terang Palet) */
+    color: #0b2545;      /* Teks jadi Prussian Blue (Gelap) */
+    
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    display: flex;
+    max-height: 450px; 
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.card-img { 
+    flex: 1; 
+    background: #dde6ed; /* Versi gelap dikit dari Mint Cream */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.card-img img { 
+    width: 85%; 
+    height: auto; 
+    object-fit: contain; 
+    mix-blend-mode: multiply; 
+}
+
+.card-text { 
+    flex: 1; 
+    padding: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+/* Label Device Tag */
+.device-tag { 
+    background: #134074; /* Regal Navy */
+    color: #eef4ed;      /* Teks Putih */
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    padding: 5px 12px; 
+    border-radius: 12px; 
+    align-self: start; 
+    margin-bottom: 15px; 
+}
+
+.card-text h3 { 
+    font-size: 1.8rem; 
+    margin-bottom: 10px; 
+    color: #0b2545; /* Prussian Blue */
+}
+
+.card-text p {
+    color: #13315c; 
+}
+
+
+.specs { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 25px; 
+}
+
+.spec-box { 
+    background: #cadbea; 
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    flex: 1; 
+}
+
+.spec-box h4 { 
+    font-size: 0.8rem; 
+    color: #134074;
+    margin-bottom: 3px;
+    font-weight: 700;
+}
+
+.spec-box p { 
+    font-size: 0.85rem; 
+    color: #0b2545; 
+}
+
+.source-box {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+}
+
+/* --- FOOTER & CTA --- */
+.cta-section { 
+    text-align: center; 
+    padding: 60px 0; 
+    /* Karena di bagian bawah background body udah terang (Powder Blue),
+       CTA box-nya kita gelapin dikit biar kebaca */
+    background: rgba(34, 64, 100, 0.1); 
+    border-radius: 20px 20px 0 0;
+    margin-top: 40px;
+}
+
+.cta-section h2 { color: #dcecff; } /* Teks Gelap karena background bawah terang */
+.cta-section p { color: #b5b7ba; }
+
+.btn-download { 
+    background: #134074; /* Regal Navy */
+    color: #eef4ed;      /* Teks Mint Cream */
+    padding: 15px 40px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    border-radius: 30px; 
+    display: inline-block; 
+    margin-top: 20px; 
+    transition: 0.3s; 
+    box-shadow: 0 10px 20px rgba(19, 64, 116, 0.3);
+}
+
+.btn-download:hover { 
+    transform: translateY(-3px); 
+    background: #071e3a; /* Prussian Blue */
+}
+
+footer { 
+    text-align: center; 
+    padding: 20px 0; 
+    color: #0b2545; /* Teks footer gelap */
+    font-size: 0.85rem; 
+    font-weight: 500;
+    background: transparent;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+    .hero-content { flex-direction: column; text-align: center; }
+    .student-info-grid { justify-content: center; }
+    nav ul { display: none; }
+    
+    .card-materi { flex-direction: column; max-height: none; }
+    .card-img { height: 200px; padding: 20px; }
+    .card-text { padding: 30px 20px; }
+    
+    .profile-pic { width: 220px; height: 220px; border-width: 3px; }
+    .text-area h1 { font-size: 2rem; }
+}
